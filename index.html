@@ -7,12 +7,49 @@
     <title>Image Processor</title>
     
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-   
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
 </head>
 <body>
-
-
+    <div id="conditions">
+        <div id="conditions-header">
+        </div>
+        <div id="conditions-body">
+            <div class="color-input">
+                <input id="r1" type="text" onchange="update_cond_circle(this)">
+                &le;R-Value &le; 
+                <input id="r2" type="text" onchange="update_cond_circle(this)">
+            </div>
+            <div class="color-input">
+                <input id="g1" type="text" onchange="update_cond_circle(this)">
+                &le;G-Value &le; 
+                <input id="g2" type="text" onchange="update_cond_circle(this)">
+            </div>
+            <div class="color-input">
+                <input id="b1" type="text" onchange="update_cond_circle(this)"> 
+                &le;B-Value &le; 
+                <input id="b2" type="text" onchange="update_cond_circle(this)">
+            </div> 
+            <div id="cond-circle">
+                <div id="cond-circle-container">
+                    <div class="h-circle" id="circle-left"></div><div class="h-circle" id="circle-right"></div>
+                </div>
+                
+                </div>
+            </div>
+        <div id="conditions-footer">
+            <button onclick="save_cond()">
+                add conditon
+            </button>
+            <button onclick="hide_cond()">
+                close
+            </button>    
+        </div>
+    </div>
     <canvas id="mycanvas" style="border:1px solid #000000; margin:auto;display: inline;"></canvas>
 
     <input type="file" id="files" name="pic-file"  onchange="previewimage(this)"/>
@@ -28,7 +65,9 @@
     ">
     <button onclick="main()">Analyse Picture</button>
     <div id="status" </div></div>
-
+        <button id="cond-input" onclick="show_cond()">
+            input Colors
+        </button>
         <div id="analysedata">
             <p id="xvalue">
             </p>
@@ -44,6 +83,8 @@
     <p>
         <img id="preview">
     </p>
+
+    
     <script src="js/classes.js">
     </script>
     <script src="js/functions.js">

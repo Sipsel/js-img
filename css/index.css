@@ -1,0 +1,61 @@
+:root{
+    --condition-circle-size : 2rem;
+}
+#conditions{
+    display: grid;
+    position: fixed;; /*it can be fixed too*/
+    left:0; right:0;
+    margin:auto;
+    width: auto;
+    max-width: 40%;
+    height: 50%;
+    /* give it dimensions */
+    background-color: #1db992;
+    opacity: 100;
+    font-size: 2rem;
+  
+    border-radius: 20px;
+    text-align: justify;
+}
+#conditions-footer{
+    display: grid;
+}
+#conditions-footer>button{
+    margin: auto;
+    width:40%;
+    font-size: 2rem;
+}
+.color-input{
+    margin-top: 5%;
+    width: 80%;
+    margin-left:auto;
+    margin-right: auto;
+}
+#cond-circle{
+    margin-top: 5%;
+    width: 80%;
+    margin-left:auto;
+    margin-right: auto;
+    display: grid;
+}
+#cond-circle-container{
+    margin-left:auto;
+    margin-right: auto;
+}
+.h-circle{
+    margin: 0 0 0 0;
+    height: calc(var(--condition-circle-size) * 2);
+    width: var(--condition-circle-size);
+    display: inline-block;
+}
+#circle-left{
+    background-color: rgb(0,0,0);
+    border-bottom-left-radius: calc(var(--condition-circle-size) * 2);
+    border-top-left-radius:calc(var(--condition-circle-size) * 2)
+}
+#circle-right{
+    background-color: red;
+    border-bottom-right-radius:  calc(var(--condition-circle-size) * 2);
+    border-top-right-radius: calc(var(--condition-circle-size) * 2);
+}
+
