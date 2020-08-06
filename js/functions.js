@@ -74,6 +74,3 @@ function findPos(obj) {
     }
     return undefined;
 }
-r-10<r<r+10
-g-10<g<g10 
-b 
