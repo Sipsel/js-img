@@ -1,13 +1,12 @@
 function main(){
     var pixel = getpixel(canvas,context) // get bitmap of the canvas
     
-    Figure = new Figure(pixel,canvas.width) // matches the figure inside the canvas
-
-    makecircle(Figure.middlepoint[0],Figure.middlepoint[1])
+    F = new Figure(pixel,canvas.width) // matches the figure inside the canvas
+    makecircle(F.middlepoint[0],F.middlepoint[1])
     // put values into ui
-    document.getElementById("xvalue").innerHTML = "Delta x = " + Figure.sumx + "<br>" + "middlpoint on the  x axis = " + Figure.middlepoint[0]
-    document.getElementById("yvalue").innerHTML = "Delta y = " + Figure.sumy + "<br>" + "middlepoint on the y axis = " + Figure.middlepoint[1]
-    document.getElementById("area").innerHTML = "Area: " + Figure.area.length + "<br> <strong>all information in pixel"
+    document.getElementById("xvalue").innerHTML = "Delta x = " + F.sumx + "<br>" + "middlpoint on the  x axis = " + F.middlepoint[0]
+    document.getElementById("yvalue").innerHTML = "Delta y = " + F.sumy + "<br>" + "middlepoint on the y axis = " + F.middlepoint[1]
+    document.getElementById("area").innerHTML = "Area: " + F.area.length + "<br> <strong>all information in pixel"
 }
 //helper functions for converting bitmap to matrix
 function getcolumn(value,width){
