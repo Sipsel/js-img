@@ -6,49 +6,90 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Image Processor</title>
     
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-   
+    
+    <!--
+        Stylesheet includes
+    -->
+    <link rel="stylesheet" href="css/index.css">
+    <!--
+        external includes
+    -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
 </head>
 <body>
+   
+    <canvas id="mycanvas"></canvas>
+
+    
+    <!-- Trigger/Open The Modal -->
+    
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <table>
+            <tr>
+                <th>
+                    untere Grenze
+                </th>
+                <th>
+                    Farbe
+                </th>
+                <th>
+                    Obere Grenze
+                </th>
+            </tr>
+        </table>
+        
+    </div>
+
+    </div>
 
 
-    <canvas id="mycanvas" style="border:1px solid #000000; margin:auto;display: inline;"></canvas>
 
-    <input type="file" id="files" name="pic-file"  onchange="previewimage(this)"/>
-    <button onclick="setImage()">set Image</button>
-    <div style="background-color:rgba(169, 169, 169, 0.2);
-    right:0;
-    position:fixed;
-    top:0;
-    width:auto;
-    z-index:100;
-    font-size:px;
-    color: orange;
-    ">
-    <button onclick="main()">Analyse Picture</button>
-    <div id="status" </div></div>
 
+    <div id="menu">
+        <input type="file" id="files" name="pic-file"  onchange="previewimage(this)" class="btn btn-primary">
+        <button onclick="setImage()" id="button-set-image" class="btn btn-success">set Image</button>
+        <button onclick="main()" id="button-analyse-image" class="btn btn-success">Analyse Picture</button>
+        <button id="button-open-menu" class="btn btn-primary" >Open Menu</button>
+    </div>
+    <div id="analyse_window">
+    
+
+
+
+    <div id="status"></div>
         <div id="analysedata">
             <p id="xvalue">
             </p>
             <p id="yvalue">
             </p>
             <p id="area">
-
             </p>
         </div>
-       
-
     </div>
     <p>
         <img id="preview">
     </p>
+
+
+    <!--
+        Javascript includes
+    -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <script src="js/classes.js">
     </script>
     <script src="js/functions.js">
     </script>
     <script src="js/core.js">
     </script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>

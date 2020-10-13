@@ -4,6 +4,11 @@ function main(){
     F = new Figure(pixel,canvas.width) // matches the figure inside the canvas
     makecircle(F.middlepoint[0],F.middlepoint[1])
     // put values into ui
+
+
+
+
+
     document.getElementById("xvalue").innerHTML = "Delta x = " + F.sumx + "<br>" + "middlpoint on the  x axis = " + F.middlepoint[0]
     document.getElementById("yvalue").innerHTML = "Delta y = " + F.sumy + "<br>" + "middlepoint on the y axis = " + F.middlepoint[1]
     document.getElementById("area").innerHTML = "Area: " + F.area.length + "<br> <strong>all information in pixel"
@@ -31,6 +36,7 @@ function setImage(){
     var image = document.getElementById("preview")
     canvas.width = image.width
     canvas.height = image.height
+    
     context.drawImage(image,0,0,image.width,image.height)
     document.getElementById("preview").style.display = "none"
 }
@@ -72,4 +78,31 @@ function findPos(obj) {
         return { x: curleft, y: curtop };
     }
     return undefined;
+}
+
+
+// Get the modal
+var modal = document.getElementById("myModal");
+
+// Get the button that opens the modal
+var btn = document.getElementById("button-open-menu");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks on the button, open the modal
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
 }

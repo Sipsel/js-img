@@ -7,33 +7,11 @@ class Figure {
                 var g = pixel.data[i + 1]
                 var b = pixel.data[i + 2]
                 if  (this.evaluate_conditions(r,g,b))
-                    /*
-                        (
-                        pixel.data[i] > 150
-                            &&
-                        pixel.data[i + 1] > 100
-                            &&
-                        pixel.data[i + 2] < 90
-                        )
-                    ||
-                        (
-                        pixel.data[i] > 200
-                            &&
-                        pixel.data[i + 1] > 150
-                        )
-                    ||
-                    (pixel.data[i] < 20
-                        &&
-                        pixel.data[i + 1] < 60
-                        &&
-                        pixel.data[i + 2] < 150))
-                    */
-                    {
+                {
                     pixel.data[i] = 100;
                     pixel.data[i + 1] = 0;
                     pixel.data[i + 2] = 0;
                     this.pixelarea.push(new Array(getcolumn(i, width), gety(i, width)));
-                    
                 }
             }
         context.putImageData(pixel, 0, 0);
@@ -78,7 +56,7 @@ class Figure {
         var y = Math.round(this.sumy/this.area.length)
         return[x,y]
     }
-    evaluate_conditions(pr,pg,pb)
+    evaluate_conditions(pr,pg,pb) // helper function for RGB_Condition
     {
         var result = false;
         for(var x = 0; x<this.conditions.length;x++)
