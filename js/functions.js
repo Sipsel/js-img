@@ -5,10 +5,6 @@ function main(){
     makecircle(F.middlepoint[0],F.middlepoint[1])
     // put values into ui
 
-
-
-
-
     document.getElementById("xvalue").innerHTML = "Delta x = " + F.sumx + "<br>" + "middlpoint on the  x axis = " + F.middlepoint[0]
     document.getElementById("yvalue").innerHTML = "Delta y = " + F.sumy + "<br>" + "middlepoint on the y axis = " + F.middlepoint[1]
     document.getElementById("area").innerHTML = "Area: " + F.area.length + "<br> <strong>all information in pixel"
@@ -92,6 +88,7 @@ function change_range_slider(param)
     if((r1_circle_value > r2_circle_value)|| (g1_circle_value > g2_circle_value) || (b1_circle_value > b2_circle_value) )
     {
         r1_circle_value = r2_circle_value--;
+        
         g1_circle_value = g2_circle_value--;
         b1_circle_value = b2_circle_value--;
         alert("bitte nur werte eingeben die im Wertebereich liegen")
@@ -114,7 +111,7 @@ function change_range_slider(param)
         break;
     }
 
-    param.parentElement.parentElement.children[1].innerHTML = param.value
+    param.parentElement.parentElement.children[1].innerHTML = param.value // adjust the value under the slider
 
     rgb1_circle.style.backgroundColor = "rgb(" + r1_circle_value + "," + g1_circle_value + "," + b1_circle_value + ")"; 
     rgb2_circle.style.backgroundColor = "rgb(" + r2_circle_value + "," + g2_circle_value + "," + b2_circle_value + ")";
