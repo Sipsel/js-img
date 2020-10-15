@@ -40,6 +40,11 @@ function setImage(){
     context.drawImage(image,0,0,image.width,image.height)
     document.getElementById("preview").style.display = "none"
 }
+//
+function user_input_add_row(table_row)
+{
+    console.log(table_row.parentElement)
+}
 // graphical functions
 function drawliney(from,width,thickness){ // not used
         for(var i =0;i<thickness;i++){
@@ -66,7 +71,54 @@ function makecircle(x,y){
     context.strokeStyle = '#003300';
     context.stroke();
 }
+function change_range_slider(param)
+{
+    let r1_circle = document.getElementById("r1-circle")
+    let r2_circle = document.getElementById("r2-circle")
+    let g1_circle = document.getElementById("g1-circle")
+    let g2_circle = document.getElementById("g2-circle")
+    let b1_circle = document.getElementById("b1-circle")
+    let b2_circle = document.getElementById("b2-circle")
+    let rgb1_circle = document.getElementById("rgb1-circle")
+    let rgb2_circle = document.getElementById("rgb2-circle")
 
+    let r1_circle_value = parseInt(r1_circle.parentElement.parentElement.parentElement.children[0].children[1].innerHTML)
+    let r2_circle_value = parseInt(r2_circle.parentElement.parentElement.parentElement.children[2].children[1].innerHTML)
+    let g1_circle_value = parseInt(g1_circle.parentElement.parentElement.parentElement.children[0].children[1].innerHTML)
+    let g2_circle_value = parseInt(g2_circle.parentElement.parentElement.parentElement.children[2].children[1].innerHTML)
+    let b1_circle_value = parseInt(b1_circle.parentElement.parentElement.parentElement.children[0].children[1].innerHTML)
+    let b2_circle_value = parseInt(b2_circle.parentElement.parentElement.parentElement.children[2].children[1].innerHTML)
+
+    if((r1_circle_value > r2_circle_value)|| (g1_circle_value > g2_circle_value) || (b1_circle_value > b2_circle_value) )
+    {
+        r1_circle_value = r2_circle_value--;
+        g1_circle_value = g2_circle_value--;
+        b1_circle_value = b2_circle_value--;
+        alert("bitte nur werte eingeben die im Wertebereich liegen")
+        return null;
+    }
+    
+    let circle = param.parentElement.parentElement.parentElement.children[1].children[0]
+    
+    
+    switch(param.id[0])
+    {
+        case 'r':
+            circle.children[param.id[1]-1].style.backgroundColor = "rgb(" + param.value + ",0,0)";  
+        break;
+        case 'g':
+            circle.children[param.id[1]-1].style.backgroundColor = 'rgb(0,' + param.value + ',0)';
+        break;
+        case 'b':
+            circle.children[param.id[1]-1].style.backgroundColor = 'rgb(0,0,' + param.value + ')';
+        break;
+    }
+
+    param.parentElement.parentElement.children[1].innerHTML = param.value
+
+    rgb1_circle.style.backgroundColor = "rgb(" + r1_circle_value + "," + g1_circle_value + "," + b1_circle_value + ")"; 
+    rgb2_circle.style.backgroundColor = "rgb(" + r2_circle_value + "," + g2_circle_value + "," + b2_circle_value + ")";
+}
 //vendor function https://stackoverflow.com/questions/6735470/get-pixel-color-from-canvas-on-mouseover
 function findPos(obj) {
     var curleft = 0, curtop = 0;
@@ -79,30 +131,7 @@ function findPos(obj) {
     }
     return undefined;
 }
-
-
-// Get the modal
-var modal = document.getElementById("myModal");
-
-// Get the button that opens the modal
-var btn = document.getElementById("button-open-menu");
-
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];
-
-// When the user clicks on the button, open the modal
-btn.onclick = function() {
-  modal.style.display = "block";
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
-    modal.style.display = "none";
-  }
-}
+// modal window
+$('#exampleModalCenter').on('shown.bs.modal', function () {
+    $('#myInput').trigger('focus')
+  })

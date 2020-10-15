@@ -27,43 +27,41 @@ body,html
     font-size:px;
     color: orange;
 }
-/* The Modal (background) */
-.modal {
-  display: none; /* Hidden by default */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Sit on top */
-  left: 0;
-  top: 0;
-  width: 100%; /* Full width */
-  height: 100%; /* Full height */
-  overflow: auto; /* Enable scroll if needed */
-}
-
-/* Modal Content/Box */
-.modal-content {
-  background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
-  padding: 20px;
-  border: 1px solid #888;
-  width: 40%; /* Could be more or less, depending on screen size */
-  height: 30%;
-}
-
-/* The Close Button */
-.close {
-  color: #aaa;
-  float: right;
-  font-size: 28px;
-  font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-  color: black;
-  text-decoration: none;
-  cursor: pointer;
-}
 #preview
 {
   margin: auto;
 }
+.circle-div
+{
+  max-width: 40px;
+}
+.circle
+{
+  display: inline;
+  height: 40px;
+  width: 20px;
+}
+.circle-right
+{
+  
+  float: left;
+  border-bottom-left-radius: 90px;
+  border-top-left-radius: 90px;
+}
+.circle-left
+{
+  float: right;
+  border-bottom-right-radius: 90px;
+  border-top-right-radius: 90px;
+}
+#r1-circle{background-color: rgb(0,0,0);}
+#r2-circle{background-color: rgb(255,0,0);}
+
+#g1-circle{background-color: rgb(0,0,0);}
+#g2-circle{background-color: rgb(0,255,0);}
+
+#b1-circle{background-color: rgb(0,0,0);}
+#b2-circle{background-color: rgb(0,0,255);}
+
+#rgb1-circle{background-color:rgb(0,0,0);}
+#rgb2-circle{background-color: rgb(255,255,100);}

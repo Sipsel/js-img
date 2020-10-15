@@ -20,43 +20,125 @@
 <body>
    
     <canvas id="mycanvas"></canvas>
+    <!-- Button trigger modal -->
+    
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Modify matching pixel</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+                <table class="table table-responsiv">
+                    <tr>
+                        <th>
+                            untere Grenze
+                        </th>
+                        <th>
+                            Farbe(RGB)
+                        </th>
+                        <th>
+                            obere Grenze
+                        </th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="slidecontainer">
+                                <input type="range" min="0" max="255" value="0" class="slider" id="r1-range" oninput="change_range_slider(this)">
+                            </div>
+                            <p class="slider-value">0</p>
+                        </td>
+                        <td>
+                            <div class="circle-div">
+                                <div class="circle circle-right r-bg" id="r1-circle"></div>
+                                <div class="circle circle-left r-bg" id="r2-circle"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="slidecontainer">
+                                <input type="range" min="0" max="255" value="255" class="slider" id="r2-range" oninput="change_range_slider(this)">
+                            </div>
+                            <p class="slider-value">255</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="slidecontainer">
+                                <input type="range" min="0" max="255" value="0" class="slider" id="g1-range" oninput="change_range_slider(this)">
+                            </div>
+                            <p class="slider-value">0</p>
+                        </td>
+                        <td>
+                            <div class="circle-div">
+                                <div class="circle circle-right" id="g1-circle"></div>
+                                <div class="circle circle-left" id="g2-circle"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="slidecontainer">
+                                <input type="range" min="0" max="255" value="255" class="slider" id="g2-range" oninput="change_range_slider(this)" >
+                            </div>
+                            <p class="slider-value">255</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="slidecontainer">
+                                <input type="range" min="0" max="255" value="0" class="slider" id="b1-range" oninput="change_range_slider(this)">
+                            </div>
+                            <p class="slider-value">0</p>
+                        </td>
+                        <td>
+                            <div class="circle-div">
+                                <div class="circle circle-right" id="b1-circle"></div>
+                                <div class="circle circle-left" id="b2-circle"></div>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="slidecontainer">
+                                <input type="range" min="0" max="255" value="255" class="slider" id="b2-range" oninput="change_range_slider(this)">
+                            </div>
+                            <p class="slider-value">255</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                        </td>
+                        <td>
+                            <div class="circle-div">
+                                <div class="circle circle-right" id="rgb1-circle"></div>
+                                <div class="circle circle-left" id="rgb2-circle"></div>
+                            </div>
+                        </td>
+                        <td>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Add Pattern</button>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    
 
     
-    <!-- Trigger/Open The Modal -->
-    
 
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-
-    <!-- Modal content -->
-    <div class="modal-content">
-        <span class="close">&times;</span>
-        <table>
-            <tr>
-                <th>
-                    untere Grenze
-                </th>
-                <th>
-                    Farbe
-                </th>
-                <th>
-                    Obere Grenze
-                </th>
-            </tr>
-        </table>
-        
-    </div>
 
     </div>
-
-
-
-
     <div id="menu">
         <input type="file" id="files" name="pic-file"  onchange="previewimage(this)" class="btn btn-primary">
         <button onclick="setImage()" id="button-set-image" class="btn btn-success">set Image</button>
         <button onclick="main()" id="button-analyse-image" class="btn btn-success">Analyse Picture</button>
-        <button id="button-open-menu" class="btn btn-primary" >Open Menu</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Open Menu</button>
     </div>
     <div id="analyse_window">
     
