@@ -1,7 +1,7 @@
 class Figure {
-    constructor(pixel, width) {
+    constructor(pixel, width,conditions) {
         this.pixelarea = [];
-        this.conditions = [new Rgb_condition(0,255,0,50,0,50)]
+        this.conditions = conditions
             for (var i = 0; i < pixel.data.length; i += 4) {
                 var r = pixel.data[i]
                 var g = pixel.data[i + 1]

@@ -24,8 +24,8 @@
     
     
     <!-- Modal -->
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal fade" id="ModalMenu" tabindex="-1" role="dialog" aria-labelledby="ModalMenuTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered col" role="document">
         <div class="modal-content">
             <div class="modal-header">
             <h5 class="modal-title" id="exampleModalLongTitle">Modify matching pixel</h5>
@@ -34,103 +34,114 @@
             </button>
             </div>
             <div class="modal-body">
-                <table class="table table-responsiv">
-                    <tr>
-                        <th>
-                            untere Grenze
-                        </th>
-                        <th>
-                            Farbe(RGB)
-                        </th>
-                        <th>
-                            obere Grenze
-                        </th>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="slidecontainer">
-                                <input type="range" min="0" max="255" value="0" class="slider" id="r1-range" oninput="change_range_slider(this)">
-                            </div>
-                            <p class="slider-value">0</p>
-                        </td>
-                        <td>
-                            <div class="circle-div">
-                                <div class="circle circle-right r-bg" id="r1-circle"></div>
-                                <div class="circle circle-left r-bg" id="r2-circle"></div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="slidecontainer">
-                                <input type="range" min="0" max="255" value="255" class="slider" id="r2-range" oninput="change_range_slider(this)">
-                            </div>
-                            <p class="slider-value">255</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="slidecontainer">
-                                <input type="range" min="0" max="255" value="0" class="slider" id="g1-range" oninput="change_range_slider(this)">
-                            </div>
-                            <p class="slider-value">0</p>
-                        </td>
-                        <td>
-                            <div class="circle-div">
-                                <div class="circle circle-right" id="g1-circle"></div>
-                                <div class="circle circle-left" id="g2-circle"></div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="slidecontainer">
-                                <input type="range" min="0" max="255" value="255" class="slider" id="g2-range" oninput="change_range_slider(this)" >
-                            </div>
-                            <p class="slider-value">255</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                            <div class="slidecontainer">
-                                <input type="range" min="0" max="255" value="0" class="slider" id="b1-range" oninput="change_range_slider(this)">
-                            </div>
-                            <p class="slider-value">0</p>
-                        </td>
-                        <td>
-                            <div class="circle-div">
-                                <div class="circle circle-right" id="b1-circle"></div>
-                                <div class="circle circle-left" id="b2-circle"></div>
-                            </div>
-                        </td>
-                        <td>
-                            <div class="slidecontainer">
-                                <input type="range" min="0" max="255" value="255" class="slider" id="b2-range" oninput="change_range_slider(this)">
-                            </div>
-                            <p class="slider-value">255</p>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>
-                        </td>
-                        <td>
-                            <div class="circle-div">
-                                <div class="circle circle-right" id="rgb1-circle"></div>
-                                <div class="circle circle-left" id="rgb2-circle"></div>
-                            </div>
-                        </td>
-                        <td>
-                        </td>
-                    </tr>
-                </table>
-            </div>
+                    <table class="table table-responsiv">
+                        <tr>
+                            <th>
+                                untere Grenze
+                            </th>
+                            <th>
+                                Farbe(RGB)
+                            </th>
+                            <th>
+                                obere Grenze
+                            </th>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="slidecontainer">
+                                    <input type="range" min="0" max="255" value="0" class="slider" id="r1-range" oninput="change_range_slider(this)">
+                                </div>
+                                <p class="slider-value">0</p>
+                            </td>
+                            <td>
+                                <div class="circle-div">
+                                    <div class="circle circle-right r-bg" id="r1-circle"></div>
+                                    <div class="circle circle-left r-bg" id="r2-circle"></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="slidecontainer">
+                                    <input type="range" min="0" max="255" value="255" class="slider" id="r2-range" oninput="change_range_slider(this)">
+                                </div>
+                                <p class="slider-value">255</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="slidecontainer">
+                                    <input type="range" min="0" max="255" value="0" class="slider" id="g1-range" oninput="change_range_slider(this)">
+                                </div>
+                                <p class="slider-value">0</p>
+                            </td>
+                            <td>
+                                <div class="circle-div">
+                                    <div class="circle circle-right" id="g1-circle"></div>
+                                    <div class="circle circle-left" id="g2-circle"></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="slidecontainer">
+                                    <input type="range" min="0" max="255" value="255" class="slider" id="g2-range" oninput="change_range_slider(this)" >
+                                </div>
+                                <p class="slider-value">255</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div class="slidecontainer">
+                                    <input type="range" min="0" max="255" value="0" class="slider" id="b1-range" oninput="change_range_slider(this)">
+                                </div>
+                                <p class="slider-value">0</p>
+                            </td>
+                            <td>
+                                <div class="circle-div">
+                                    <div class="circle circle-right" id="b1-circle"></div>
+                                    <div class="circle circle-left" id="b2-circle"></div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="slidecontainer">
+                                    <input type="range" min="0" max="255" value="255" class="slider" id="b2-range" oninput="change_range_slider(this)">
+                                </div>
+                                <p class="slider-value">255</p>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                            </td>
+                            <td>
+                                <div class="circle-div">
+                                    <div class="circle circle-right" id="rgb1-circle"></div>
+                                    <div class="circle circle-left" id="rgb2-circle"></div>
+                                </div>
+                            </td>
+                            <td>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+                
             <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Add Pattern</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-primary" onclick="add_RGB_Cond()">Add Pattern</button>
             </div>
+        </div>
+        <div class="col col-lg-4" id="rgb_condition_menu">
+            <table class="table table-responsiv" id="rgb_condition_table">
+                <tr>
+                    <th>
+                        RGB Condition
+                    </th>
+                </tr>
+                <tr>
+                    <td>
+                        rb1
+                    </td>
+                </tr>
+            </table>
         </div>
         </div>
     </div>
-    
-    
-
-    
 
 
     </div>
@@ -138,27 +149,25 @@
         <input type="file" id="files" name="pic-file"  onchange="previewimage(this)" class="btn btn-primary">
         <button onclick="setImage()" id="button-set-image" class="btn btn-success">set Image</button>
         <button onclick="main()" id="button-analyse-image" class="btn btn-success">Analyse Picture</button>
-        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">Open Menu</button>
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#ModalMenu">Open Menu</button>
     </div>
+
+
     <div id="analyse_window">
-    
-
-
-
-    <div id="status"></div>
-        <div id="analysedata">
-            <p id="xvalue">
-            </p>
-            <p id="yvalue">
-            </p>
-            <p id="area">
-            </p>
+        <div id="status"></div>
+            <div id="analysedata">
+                <p id="xvalue">
+                </p>
+                <p id="yvalue">
+                </p>
+                <p id="area">
+                </p>
+            </div>
         </div>
+        <p>
+            <img id="preview">
+        </p>
     </div>
-    <p>
-        <img id="preview">
-    </p>
-
 
     <!--
         Javascript includes

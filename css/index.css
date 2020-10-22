@@ -64,4 +64,10 @@ body,html
 #b2-circle{background-color: rgb(0,0,255);}
 
 #rgb1-circle{background-color:rgb(0,0,0);}
-#rgb2-circle{background-color: rgb(255,255,100);}
+#rgb2-circle{background-color: rgb(255,255,255);}
+
+#rgb_condition_menu
+{
+  background-color: white;
+  height: 100%;
+}
