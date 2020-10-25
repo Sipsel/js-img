@@ -59,6 +59,7 @@ function add_RGB_Cond()
 
     rgb_conds.push(new Rgb_condition(r1_circle_value,r2_circle_value,g1_circle_value,g2_circle_value,b1_circle_value,b2_circle_value))
     
+    
     resetUI();
 }
     //reset UI
